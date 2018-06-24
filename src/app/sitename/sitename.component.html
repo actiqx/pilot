@@ -1,9 +1,9 @@
 <div class="form-group">
   <label for="exampleFormControlSelect1">SELECT SITENAME</label>
 
-  <select class="form-control" [ngModel]="selectedSiteName" (ngModelChange)="onChangeObj($event)" name="sel3">
+  <select class="form-control" [ngModel]="selectedDeviceObj" (ngModelChange)="onChangeObj($event)" name="sel3">
 
     <option [ngValue]="i" *ngFor="let i of sitenames">{{i.name}}</option>
   </select>
 </div>
-<button type="submit" class="btn btn-info pull-right" (click)="getSite(selectedSiteName)">Submit</button>
+<button type="submit" class="btn btn-info pull-right" (click)="getSite(selectedDeviceObj)">Submit</button>

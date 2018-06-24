@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GetsitenameService } from '../_services/getsitename.service';
 import { MapComponent } from '../map/map.component';
-import { EventEmitter } from 'events';
+
 import { ISite } from '../_models/sitename';
 
 @Component({
@@ -11,9 +11,8 @@ import { ISite } from '../_models/sitename';
 })
 export class SitenameComponent implements OnInit {
   sitenames: ISite[];
-  selectedSiteName: {};
-  public selectedStatusId = {};
-  @Output() selectedDeviceObj = new EventEmitter();
+  selectedDeviceObj: any;
+  @Output() public siteNameEvent = new EventEmitter();
 
   constructor(private _getsitename: GetsitenameService) {}
 
@@ -25,10 +24,8 @@ export class SitenameComponent implements OnInit {
   }
   public onChangeObj(newObj) {
     this.selectedDeviceObj = newObj;
-    console.log(this.selectedDeviceObj);
   }
   getSite() {
-    this.selectedDeviceObj.emit(this.selectedSiteName);
-    // this.mapComponent.nitin(this.selectedDeviceObj);
+    this.siteNameEvent.emit(this.selectedDeviceObj);
   }
 }

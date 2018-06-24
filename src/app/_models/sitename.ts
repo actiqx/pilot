@@ -3,7 +3,8 @@ export interface ISite {
   name: string;
   short_name: string;
   timezone: string;
-  location: any;
+  dblatitude: any;
+  dblongitude: any;
   is_active: number;
   company_id: number;
   user_id: number;

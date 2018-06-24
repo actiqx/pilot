@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ISite } from './../_models/sitename';
+import { Component, OnInit } from '@angular/core';
 import { CircleManager } from 'node_modules/@agm/core/services/managers/circle-manager';
 import { SitenameComponent } from '../sitename/sitename.component';
 import { Input, forwardRef, Inject } from '@angular/core';
@@ -13,15 +14,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MapComponent implements OnInit {
   // google maps zoom level
-  zoom: number = 14;
+  selectedDeviceObj: ISite;
+  zoom = 14;
   deviceObjects: any;
   // initial center position for the map
-  lat: number;
-  lng: number;
+  lat;
+  lng;
   markers: Marker[] = [
     {
-      lat: 51.673858,
-      lng: 7.815982,
+      lat: 25.764676,
+      lng: -100.19484,
       label: 'A',
       draggable: true
     },
@@ -40,13 +42,12 @@ export class MapComponent implements OnInit {
   ];
   constructor() {}
 
-  ngOnInit() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-      });
-    }
+  ngOnInit() {}
+  receiveData(data: any) {
+    console.log(data);
+    this.selectedDeviceObj = data;
+    this.lat = parseFloat(this.selectedDeviceObj.dblatitude);
+    this.lng = parseFloat(this.selectedDeviceObj.dblongitude);
   }
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`);
