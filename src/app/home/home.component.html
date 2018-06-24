@@ -1,0 +1,137 @@
+<!-- <app-nav>
+</app-nav>
+
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+    <div class="row">
+
+        <div class="col-md-9">
+            <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChooseLocation($event)">
+                <agm-marker [latitude]="lat" [longitude]="lng" *ngIf="locationChoosen">
+                    <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination">
+                    </agm-direction>
+                </agm-marker>
+            </agm-map>
+        </div>
+        <div class="col-md-3 ">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">SELECT SITENAME</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Mexico City</option>
+                        <option>Ecatepec</option>
+                        <option>Hermosillo</option>
+                        <option>Mexicali</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-info pull-right">Submit</button>
+
+            </form>
+            <br>
+
+            <div>
+                <div class="form-group">
+                    <b>Route Name:</b>
+                    <select id="start" class="form-control">
+                        <option value="Halifax, NS">Route 1</option>
+                        <option value="Boston, MA">Route 2</option>
+                        <option value="New York, NY">Route 3</option>
+                        <option value="Miami, FL">Route 4</option>
+                    </select>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <b>Route Type:</b>
+                    <select id="end" class="form-control">
+                        <option value="Vancouver, BC">Autosale</option>
+                        <option value="Seattle, WA">Presale</option>
+                        <option value="San Francisco, CA">Delivery</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="" placeholder="Enter Date">
+                </div>
+                <br>
+                <br>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="getDirection()">Get Direction</button>
+        </div>
+    </div>
+</div> -->
+<app-nav>
+</app-nav>
+<app-sidebar></app-sidebar>
+<div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-holder">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-md-9">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <app-map></app-map>
+                        </div>
+                    </div>
+                    <!-- end card-->
+                </div>
+
+                <div class=" col-md-3">
+                    <div class="card mb-3">
+
+                        <div class="card-body">
+                            <form>
+                                <app-sitename></app-sitename>
+                            </form>
+                            <br>
+
+                            <!-- <div class="form-group">
+                                <b>Route Name:</b>
+                                <select id="start" class="form-control">
+                                    <option value="Halifax, NS">Route 1</option>
+                                    <option value="Boston, MA">Route 2</option>
+                                    <option value="New York, NY">Route 3</option>
+                                    <option value="Miami, FL">Route 4</option>
+                                </select>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <b>Route Type:</b>
+                                <select id="end" class="form-control">
+                                    <option value="Vancouver, BC">Autosale</option>
+                                    <option value="Seattle, WA">Presale</option>
+                                    <option value="San Francisco, CA">Delivery</option>
+                                </select>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" id="" placeholder="Enter Date">
+                            </div> -->
+                            <!-- <br>
+                            <button type="button" class="btn btn-primary" (click)="getDirection()">Get Direction</button> -->
+                        </div>
+
+                    </div>
+                    <!-- end card-->
+                </div>
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+    <!-- END content -->
+</div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrtgXDLbb58ls_9ZAtvM1Wqo-7TDr_KJc&callback=initMap">
+</script>

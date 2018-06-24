@@ -1,0 +1,26 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  min-height: 100%;
+  width: 230px;
+  z-index: 810;
+  background: linear-gradient(to right, #134e5e, #71b280);
+}
+.sidebar a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.headere ul {
+  list-style-type: none;
+}
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 10%;
+}

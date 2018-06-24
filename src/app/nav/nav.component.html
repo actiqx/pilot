@@ -1,0 +1,72 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark ">
+  <a class="navbar-brand" [routerLink]="['/home']">Pilot</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/members']">Matches
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/lists']">List</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/message']">Messages</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav  pull-right">
+
+      <li class="nav-item dropdown" dropdown>
+
+        <p>
+          <a class="logout" [routerLink]="['/login']">
+            <i class="fa fa-power-off mr-sm-2"></i>Logout</a>
+        </p>
+        <div class="dropdown-menu" *dropdownMenu>
+
+          <li class="divider dropdown-divider"></li>
+          <a href="#login" class="dropdown-item">
+            <i class="fa fa-power-off mr-sm-2"></i>Logout</a>
+
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav> -->
+<div id="main">
+  <div class="headerbar">
+
+    <!-- LOGO -->
+    <div class="headerbar-left">
+      <a href="index.html" class="logo">
+        <img alt="Logo" src="assets/images/ESIPO.png" />
+      </a>
+    </div>
+    <nav class="navbar-custom">
+      <ul class="list-inline float-right mb-0">
+        <li class="list-inline-item dropdown notif">
+          <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"
+            [routerLink]="['/login']">
+            <i class=" fa fa-power-off "></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="list-inline menu-left mb-0 ">
+        <li class="float-left ">
+          <button class="button-menu-mobile open-left ">
+            <i class="fa fa-fw fa-bars "></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
