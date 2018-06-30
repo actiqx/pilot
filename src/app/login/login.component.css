@@ -10,7 +10,9 @@
   font-size: 14px;
   height: 100%;
 }
-
+.loginlabel {
+  background-color: white !important;
+}
 .my-login-page .brand {
   width: 90px;
   height: 90px;
