@@ -5,12 +5,7 @@ import { SitenameComponent } from '../sitename/sitename.component';
 import { Input, forwardRef, Inject } from '@angular/core';
 import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-map',
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css'],
-  providers: [CircleManager]
-})
+
 @Injectable()
 export class MapComponent implements OnInit {
   // google maps zoom level
@@ -20,6 +15,7 @@ export class MapComponent implements OnInit {
   // initial center position for the map
   lat;
   lng;
+
   markers: Marker[] = [
     {
       lat: 25.764676,

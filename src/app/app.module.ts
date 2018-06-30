@@ -1,3 +1,4 @@
+import { DirectionsMapDirective } from './_directive/DirectionsMap.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,7 +37,8 @@ import { CircleManager } from 'node_modules/@agm/core/services/managers/circle-m
     DetailsComponent,
     PhoneuserComponent,
     MapComponent,
-    SitenameComponent
+    SitenameComponent,
+    DirectionsMapDirective
   ],
   imports: [
     BrowserModule,
