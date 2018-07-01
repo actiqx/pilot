@@ -6,4 +6,30 @@
     <option [ngValue]="i" *ngFor="let i of sitenames">{{i.name}}</option>
   </select>
 </div>
-<button type="submit" class="btn btn-info pull-right" (click)="getSite(selectedDeviceObj)">Submit</button>
+<button type="submit" class="btn btn-info pull-right btnfirst" (click)="getSite(selectedDeviceObj)">Submit</button>
+<br>
+<br>
+<div class="display" *ngIf="_isOpen">
+  <div class="form-group">
+    <label for="exampleFormControlSelect3">SELECT ROUTETYPE</label>
+    <select class="form-control" [ngModel]="selectedRouteType" (ngModelChange)="onChangeSiteId($event)" name="sel3">
+      <option [ngValue]="j" *ngFor="let j of route_type">{{j.routetype_name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">SELECT ROUTENAME</label>
+
+    <select class="form-control" [ngModel]="selectedRouteName" name="sel3">
+
+      <option [ngValue]="k" *ngFor="let k of routes">{{k.name}}</option>
+    </select>
+  </div>
+  <br>
+  <br>
+  <div class="form-group">
+    <label for="date">End Date</label>
+    <input type="date" class="form-control" id="" placeholder="Enter Date">
+  </div>
+  <button class="btn btn-info pull-right" (click)="getRouterClick()">Submit</button>
+</div>

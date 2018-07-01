@@ -15,16 +15,17 @@
           <div class="col-md-12">
             <form>
               <div class="form-group">
-                <label for="routename">Route Name</label>
-                <select id="start" class="form-control">
-                  <option value="Halifax, NS">Route 1</option>
-                  <option value="Boston, MA">Route 2</option>
-                  <option value="New York, NY">Route 3</option>
-                  <option value="Miami, FL">Route 4</option>
+                <label for="exampleFormControlSelect3">SELECT ROUTETYPE</label>
+                <select class="form-control" [ngModel]="selectedRoutes" (ngModelChange)="onChangeObj($event)" name="sel3">
+                  <option [ngValue]="r" *ngFor="let r of routes">{{r.name}}</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="date">Date</label>
+                <label for="date">Start Date</label>
+                <input type="date" class="form-control" id="" placeholder="Enter Date">
+              </div>
+              <div class="form-group">
+                <label for="date">End Date</label>
                 <input type="date" class="form-control" id="" placeholder="Enter Date">
               </div>
             </form>

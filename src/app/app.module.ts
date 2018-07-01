@@ -26,6 +26,9 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { SitenameComponent } from './sitename/sitename.component';
 import { CircleManager } from 'node_modules/@agm/core/services/managers/circle-manager';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { DirectionsMapDirective } from './_directives/DirectionsMap.directive';
+import { LatLng } from 'node_modules/@agm/core/services/google-maps-types';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { CircleManager } from 'node_modules/@agm/core/services/managers/circle-m
     ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
+    AgmSnazzyInfoWindowModule,
     FormsModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),

@@ -1,0 +1,188 @@
+{
+  "deviceObjects": [
+    {
+      "id": 2,
+      "name": "MEXICO CITY",
+      "short_name": "MEXICO",
+      "timezone": "America/Mexico_City",
+      "dblatitude": "19.432608",
+      "dblongitude": " -99.133209",
+      "is_active": "1",
+      "company_id": "1",
+      "user_id": "1"
+    },
+    {
+      "id": 3,
+      "name": "BENGALURU",
+      "short_name": "Bengaluru",
+      "timezone": "india/Bengaluru",
+      "dblatitude": "12.972442",
+      "dblongitude": " 77.580643",
+      "is_active": "1",
+      "company_id": "1",
+      "user_id": "1"
+    }
+  ],
+
+  "routes": [
+    {
+      "id": 1,
+      "name": "Route 1",
+      "number": "1",
+      "company_id": "1",
+      "site_id": "2",
+      "route_type": "PRESALE",
+      "is_active": "1",
+      "user_id": "1",
+      "created_at": "06/20/2018",
+      "updated_at": "07/20/2018"
+    },
+    {
+      "id": 3,
+      "name": "Route 2",
+      "number": "2",
+      "company_id": "1",
+      "site_id": "3",
+      "route_type": "AUTOSALE",
+      "is_active": "1",
+      "user_id": "1",
+      "created_at": "06/20/2018",
+      "updated_at": "07/20/2018"
+    },
+    {
+      "id": 3,
+      "name": "Route 3",
+      "number": "2",
+      "company_id": "1",
+      "site_id": "3",
+      "route_type": "DELIVERY",
+      "is_active": "1",
+      "user_id": "1",
+      "created_at": "06/20/2018",
+      "updated_at": "07/20/2018"
+    }
+  ],
+  "route_type": [
+    {
+      "id": 1,
+      "route_type_id": 1,
+      "routetype_name": "PRESALE"
+    },
+    {
+      "id": 2,
+      "route_type_id": 2,
+      "routetype_name": "AUTOSALE"
+    },
+    {
+      "id": 3,
+      "route_type_id": 3,
+      "routetype_name": "DELIVERY"
+    }
+  ],
+  "router": [
+    {
+      "id": "1",
+      "route_id": "1",
+      "routename_id": "1",
+      "sequence": "1",
+      "site_id": "2",
+      "route_type_id": "1",
+      "store_id": "1"
+    },
+    {
+      "id": "2",
+      "route_id": "1",
+      "routename_id": "1",
+      "sequence": "2",
+      "site_id": "2",
+      "route_type_id": "1",
+      "store_id": "2"
+    },
+    {
+      "id": "3",
+      "route_id": "1",
+      "routename_id": "1",
+      "sequence": "3",
+      "site_id": "2",
+      "route_type_id": "1",
+      "store_id": "3"
+    },
+    {
+      "id": "4",
+      "route_id": "1",
+      "routename_id": "1",
+      "sequence": "4",
+      "site_id": "2",
+      "route_type_id": "1",
+      "store_id": "4"
+    },
+    {
+      "id": "5",
+      "route_id": "1",
+      "routename_id": "1",
+      "sequence": "5",
+      "site_id": "2",
+      "route_type_id": "1",
+      "store_id": "5"
+    },
+    {
+      "id": "6",
+      "route_id": "1",
+      "routename_id": "3",
+      "sequence": "1",
+      "site_id": "1",
+      "route_type_id": "2",
+      "store_id": "1"
+    },
+    {
+      "id": "7",
+      "route_id": "1",
+      "routename_id": "3",
+      "sequence": "1",
+      "site_id": "2",
+      "route_type_id": "3",
+      "store_id": "2"
+    },
+    {
+      "id": "8",
+      "route_id": "1",
+      "routename_id": "3",
+      "sequence": "2",
+      "site_id": "2",
+      "route_type_id": "3",
+      "store_id": "3"
+    }
+  ],
+  "stores": [
+    {
+      "id": "1",
+      "name": "Puebla",
+      "lat": "19.3898194",
+      "lng": "-99.2540159"
+    },
+    {
+      "id": "2",
+      "name": "Guadalajara",
+      "lat": "19.358079",
+      "lng": "-99.154452"
+    },
+    {
+      "id": "3",
+      "name": "León",
+      "lat": "19.363909",
+      "lng": "-99.129046"
+    },
+    {
+      "id": "4",
+      "name": "HEB MARGAIN",
+      "lat": "19.424791",
+      "lng": "-99.093341"
+    },
+    {
+      "id": "5",
+      "name": "HEB VALLE",
+      "lat": "19.452686",
+      "lng": "-99.057145"
+    }
+  ]
+}
