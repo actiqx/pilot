@@ -27,8 +27,6 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
 import { SitenameComponent } from './sitename/sitename.component';
 import { CircleManager } from 'node_modules/@agm/core/services/managers/circle-manager';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
-import { DirectionsMapDirective } from './_directives/DirectionsMap.directive';
-import { LatLng } from 'node_modules/@agm/core/services/google-maps-types';
 
 @NgModule({
   declarations: [

@@ -1,52 +1,105 @@
 <app-nav> </app-nav>
 <div class="row">
   <div class="col-md-8">
-    <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng">
 
-      </agm-marker>
-    </agm-map>
   </div>
   <div class="col-md-4 list">
-    <ul class="list-group">
-      <li class="list-group-item ">SiteName &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mexico City</li>
-      <li class="list-group-item">Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 06/14/2018</li>
-      <li class="list-group-item">Route Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La Condesa</li>
-      <li class="list-group-item">Programmed Visits &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</li>
-      <li class="list-group-item">Visited &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8</li>
-    </ul>
-    <br>
-    <button type="button" class="btn btn-primary pull-right" (click)="openModal(template)">Feedback</button>
 
-    <ng-template #template>
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Feedback</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Status</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>success</option>
-              <option>failure</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Motives</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>unreachable</option>
-              <option>closed</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-success pull-right">Submit</button>
-        </form>
-      </div>
-    </ng-template>
   </div>
 </div>
+<app-nav>
+</app-nav>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB08sh-HTStc0BPF2Eci1uW55B8-ggLRwo&callback=initMap">
-</script>
+<form #editForm="ngForm" id="editForm">
+  <div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="breadcrumb-holder">
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class=" col-md-9">
+            <div class="card">
+
+              <div class="card-body">
+                <agm-map [latitude]="lat" [longitude]="lng">
+                  <agm-marker [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="marker.iconUrl">
+                    <agm-direction [origin]="origin" [destination]="destination" [waypoints]="waypoints"></agm-direction>
+                  </agm-marker>
+                </agm-map>
+              </div>
+            </div>
+            <!-- end card-->
+          </div>
+
+          <div class=" col-md-3">
+            <div class="card mb-3">
+
+              <div class="card-body">
+
+                <ul class="list-group">
+                  <li class="list-group-item ">SiteName &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Mexico City</li>
+                  <li class="list-group-item">Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    07/02/2018
+                  </li>
+                  <li class="list-group-item">Route Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Route 1</li>
+                  <li class="list-group-item">Programmed Visits &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</li>
+                  <li class="list-group-item">Visited &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</li>
+                </ul>
+                <br>
+                <button type="button" class="btn btn-primary pull-right" (click)="openModal(template)">Feedback</button>
+
+                <ng-template #template>
+                  <div class="modal-header">
+                    <h4 class="modal-title pull-left">Feedback</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                      <select class="form-control" id="status" [(ngModel)]="selectedStatus" (ngModelChange)="onStatusTypeChange($event)">
+                        <option *ngFor="let type of status" [ngValue]="type">{{type.status_type}}</option>
+
+                      </select>
+                    </div>
+                    <div class="form-group" *ngIf="showMotive">
+                      <label for="exampleFormControlSelect1">Motives</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>unreachable</option>
+                        <option>closed</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-success pull-right" (click)="submitFeedBack()">Submit</button>
+
+                  </div>
+                </ng-template>
+
+                <br>
+
+
+              </div>
+
+            </div>
+            <!-- end card-->
+          </div>
+
+        </div>
+        <!-- end row -->
+      </div>
+    </div>
+    <!-- END content -->
+  </div>
+</form>
