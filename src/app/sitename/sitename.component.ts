@@ -92,6 +92,7 @@ export class SitenameComponent implements OnInit {
     this.RouteTypeEvent.emit(this.selectedDeviceObj3);
   }
   getRouterClick() {
+    this.storedata = [];
     this._router
       .getRouterListBySiteIdRouteType(
         this.selectedRouteType.id,
@@ -103,15 +104,18 @@ export class SitenameComponent implements OnInit {
         this.getStoresOnSelectedRoute();
         console.log(data);
       });
-
-    this.StoreDataEvent.emit(this.storedata);
   }
   getStoresOnSelectedRoute() {
-    this.routerdata.forEach(item => {
+    this.routerdata.forEach((item, index) => {
       this._stores.getStoreById(item.store_id).subscribe(res => {
         item.store = [];
         item.store.push(res);
         this.storedata.push(item);
+        console.log(index);
+        if (index === this.routerdata.length - 1) {
+          console.log('storedata=', JSON.stringify(this.storedata));
+          this.StoreDataEvent.emit(this.storedata);
+        }
       });
     });
   }

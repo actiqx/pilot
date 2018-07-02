@@ -56,9 +56,23 @@ export class MapComponent implements OnInit {
       draggable: true
     }
   ];
+  renderOptions: { suppressMarkers: true };
+  markerOptions = {
+    origin: {
+      icon: 'https://i.imgur.com/7teZKif.png'
+    },
+    destination: {
+      icon: 'https://i.imgur.com/7teZKif.png',
+      infoWindow: `
+        <h4>Hello<h4>
+        <a href='http://www-e.ntust.edu.tw/home.php' target='_blank'>Taiwan Tech</a>
+        `
+    }
+  };
   constructor() {}
 
   ngOnInit() {}
+
   receiveData(data: any) {
     console.log(data);
     this.selectedDeviceObj = data;
@@ -67,39 +81,27 @@ export class MapComponent implements OnInit {
   }
   recieveStoreData(data) {
     this.routerdata = data;
+    this.points = {};
 
     this.origin = {
-      lat: 19.3898194,
-      lng: -99.2540159
-      // lat: parseFloat(this.routerdata[0].store[0].lat),
-      // lng: parseFloat(this.routerdata[0].store[0].lng)
+      lat: parseFloat(this.routerdata[0].store[0].lat),
+      lng: parseFloat(this.routerdata[0].store[0].lng)
     };
     this.destination = {
-      lat: 19.452686,
-      lng: -99.057145
-      // lat: parseFloat(this.routerdata[this.routerdata.length - 1].store[0].lat),
-      // lng: parseFloat(this.routerdata[this.routerdata.length - 1].store[0].lng)
+      lat: parseFloat(this.routerdata[this.routerdata.length - 1].store[0].lat),
+      lng: parseFloat(this.routerdata[this.routerdata.length - 1].store[0].lng)
     };
-    // for (let i = 1; i < this.routerdata.length - 1; i++) {
-    //   this.points = {
-    //     location: (
-    //       parseFloat(this.routerdata[i].store[0].lat),
-    //       parseFloat(this.routerdata[i].store[0].lng)
-    //     ),
-    //     stopover: false
-    //   };
-    //   this.waypoints.push(this.points);
-    // }
-    // this.points = {
-    //   location: this.createLatLng(19.363909, -99.129046),
-    //   stopover: true
-    // };
-    this.points = {
-      location: { lat: 19.363909, lng: -99.129046 },
-      stopover: true
-    };
-    this.waypoints.push(this.points);
-    // this.waypoints.push(this.points);
+    for (let i = 1; i < this.routerdata.length - 1; i++) {
+      this.points = {
+        location: {
+          lat: parseFloat(this.routerdata[i].store[0].lat),
+          lng: parseFloat(this.routerdata[i].store[0].lng)
+        },
+        stopover: true
+      };
+      this.waypoints.push(this.points);
+    }
+
     console.log('In Map COmponent:' + JSON.stringify(this.destination));
     console.log('In Map COmponent:' + JSON.stringify(this.waypoints));
   }

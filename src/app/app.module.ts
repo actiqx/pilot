@@ -1,4 +1,4 @@
-import { DirectionsMapDirective } from './_directive/DirectionsMap.directive';
+import { AgmDirection } from './_directive/DirectionsMap.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +14,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DetailsComponent } from './details/details.component';
 import { PhoneuserComponent } from './phoneuser/phoneuser.component';
 import { AgmCoreModule } from '@agm/core';
-import { AgmDirectionModule } from 'agm-direction';
 import { ModalModule } from 'ngx-bootstrap';
 import { MapComponent } from './map/map.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -39,7 +38,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     PhoneuserComponent,
     MapComponent,
     SitenameComponent,
-    DirectionsMapDirective
+    AgmDirection
   ],
   imports: [
     BrowserModule,
@@ -53,8 +52,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBrtgXDLbb58ls_9ZAtvM1Wqo-7TDr_KJc'
-    }),
-    AgmDirectionModule
+    })
   ],
   providers: [
     AuthGuard,
